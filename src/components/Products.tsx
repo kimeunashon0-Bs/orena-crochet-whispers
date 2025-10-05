@@ -11,37 +11,37 @@ const products = [
     id: 1,
     image: blueBikini,
     name: "Crochet Bikini Set - Blue",
-    whatsappMessage: "Hi! I'm interested in the Crochet Bikini Set - Blue from Orena. Could you please share the price and availability?"
+    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Crochet Bikini Set - Blue from Orena. Could you please share the price and availability?"
   },
   {
     id: 2,
     image: redPearlDress,
     name: "Pearl Crochet Dress - Red",
-    whatsappMessage: "Hi! I'm interested in the Pearl Crochet Dress - Red from Orena. Could you please share the price and availability?"
+    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Pearl Crochet Dress - Red from Orena. Could you please share the price and availability?"
   },
   {
     id: 3,
     image: orangeBikini,
     name: "Crochet Bikini Set - Orange",
-    whatsappMessage: "Hi! I'm interested in the Crochet Bikini Set - Orange from Orena. Could you please share the price and availability?"
+    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Crochet Bikini Set - Orange from Orena. Could you please share the price and availability?"
   },
   {
     id: 4,
     image: multicolorDress,
     name: "Multicolor Crochet Dress",
-    whatsappMessage: "Hi! I'm interested in the Multicolor Crochet Dress from Orena. Could you please share the price and availability?"
+    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Multicolor Crochet Dress from Orena. Could you please share the price and availability?"
   },
   {
     id: 5,
     image: purpleTop,
     name: "Ruffled Crochet Top - Purple",
-    whatsappMessage: "Hi! I'm interested in the Ruffled Crochet Top - Purple from Orena. Could you please share the price and availability?"
+    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Ruffled Crochet Top - Purple from Orena. Could you please share the price and availability?"
   },
   {
     id: 6,
     image: greyBeanie,
     name: "Crochet Beanie - Grey",
-    whatsappMessage: "Hi! I'm interested in the Crochet Beanie - Grey from Orena. Could you please share the price and availability?"
+    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Crochet Beanie - Grey from Orena. Could you please share the price and availability?"
   }
 ];
 
