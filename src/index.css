@@ -44,6 +44,8 @@ All colors MUST be HSL.
     --shadow-gold: 0 10px 40px -10px hsl(43 60% 53% / 0.3);
     --shadow-gold-hover: 0 20px 60px -10px hsl(43 60% 53% / 0.5);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --whatsapp-green: 142 70% 49%;
 
     --sidebar-background: 0 0% 98%;
 
