@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
@@ -25,10 +26,12 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
     <section className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-background via-muted/30 to-background" id="testimonials">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-primary text-5xl md:text-6xl">W</span>hat 
             <span className="text-primary text-5xl md:text-6xl"> O</span>ur Customers Say
@@ -38,11 +41,17 @@ const Testimonials = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
+        <div 
+          ref={ref}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          {testimonials.map((testimonial, index) => (
             <div 
               key={testimonial.id} 
               className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-gold-hover transition-smooth hover:-translate-y-2 border border-border"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -62,7 +71,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 animate-fade-in">
           <p className="text-2xl font-semibold text-primary mb-2">
             Join Our Happy Customers
           </p>

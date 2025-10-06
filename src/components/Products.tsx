@@ -1,4 +1,5 @@
 import ProductCard from "./ProductCard";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import blueBikini from "@/assets/blue-bikini.jpg";
 import redPearlDress from "@/assets/red-pearl-dress.jpg";
 import orangeBikini from "@/assets/orange-bikini.jpg";
@@ -46,16 +47,27 @@ const products = [
 ];
 
 const Products = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
     <section className="py-20 px-4 md:px-8 lg:px-16" id="products">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in">
           <span className="text-primary text-5xl md:text-6xl">O</span>ur Collection
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {products.map((product) => (
-            <div key={product.id} className="animate-fade-in">
+        <div 
+          ref={ref}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          {products.map((product, index) => (
+            <div 
+              key={product.id} 
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               <ProductCard {...product} />
             </div>
           ))}

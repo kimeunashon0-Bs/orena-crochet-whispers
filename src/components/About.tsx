@@ -1,12 +1,21 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const About = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
     <section className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-secondary/30 to-background" id="about">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 animate-fade-in">
           <span className="text-primary text-5xl md:text-6xl">A</span>bout <span className="text-primary text-5xl md:text-6xl">O</span>rena
         </h2>
         
-        <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/90">
+        <div 
+          ref={ref}
+          className={`space-y-6 text-lg md:text-xl leading-relaxed text-foreground/90 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <p>
             Welcome to Orena, where every piece is crafted with a mission to help you rediscover your spark 
             and embrace your confidence. Each item is lovingly handmade with premium yarns, creating unique 
