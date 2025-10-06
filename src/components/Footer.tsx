@@ -25,7 +25,7 @@ const Footer = () => {
         
         <div className="flex items-center justify-center gap-6 pt-4">
           <a 
-            href="https://instagram.com" 
+            href="https://www.instagram.com/miss__mwangangi" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-white hover:text-primary transition-colors"
@@ -34,20 +34,20 @@ const Footer = () => {
             <Instagram className="w-6 h-6" />
           </a>
           <a 
-            href="https://twitter.com" 
+            href="https://x.com/miss__mwangangi?t=2eIDt2nk9JqPTalyUtpXXg&s=08" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-white hover:text-primary transition-colors"
-            aria-label="Twitter"
+            aria-label="X (Twitter)"
           >
             <Twitter className="w-6 h-6" />
           </a>
           <a 
-            href="https://facebook.com" 
+            href="https://www.tiktok.com/@miss__mwangangi" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-white hover:text-primary transition-colors"
-            aria-label="Facebook"
+            aria-label="TikTok"
           >
             <Facebook className="w-6 h-6" />
           </a>

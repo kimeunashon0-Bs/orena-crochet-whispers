@@ -51,7 +51,7 @@ const Navbar = () => {
             </button>
             <div className="flex items-center gap-4 ml-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/miss__mwangangi" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors"
@@ -60,20 +60,20 @@ const Navbar = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://x.com/miss__mwangangi?t=2eIDt2nk9JqPTalyUtpXXg&s=08" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors"
-                aria-label="Twitter"
+                aria-label="X (Twitter)"
               >
                 <Twitter className="w-5 h-5" />
               </a>
               <a 
-                href="https://facebook.com" 
+                href="https://www.tiktok.com/@miss__mwangangi" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors"
-                aria-label="Facebook"
+                aria-label="TikTok"
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -114,7 +114,7 @@ const Navbar = () => {
                   </button>
                   <div className="flex items-center gap-6 pt-4 border-t border-border">
                     <a 
-                      href="https://instagram.com" 
+                      href="https://www.instagram.com/miss__mwangangi" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-foreground hover:text-primary transition-colors"
@@ -123,20 +123,20 @@ const Navbar = () => {
                       <Instagram className="w-6 h-6" />
                     </a>
                     <a 
-                      href="https://twitter.com" 
+                      href="https://x.com/miss__mwangangi?t=2eIDt2nk9JqPTalyUtpXXg&s=08" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-foreground hover:text-primary transition-colors"
-                      aria-label="Twitter"
+                      aria-label="X (Twitter)"
                     >
                       <Twitter className="w-6 h-6" />
                     </a>
                     <a 
-                      href="https://facebook.com" 
+                      href="https://www.tiktok.com/@miss__mwangangi" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-foreground hover:text-primary transition-colors"
-                      aria-label="Facebook"
+                      aria-label="TikTok"
                     >
                       <Facebook className="w-6 h-6" />
                     </a>
