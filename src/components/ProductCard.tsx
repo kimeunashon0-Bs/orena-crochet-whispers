@@ -18,8 +18,8 @@ const ProductCard = ({ image, name, whatsappMessage }: ProductCardProps) => {
   };
   
   return (
-    <div className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-gold-hover transition-smooth hover:-translate-y-2">
-      <div className="relative h-[450px] overflow-hidden">
+    <div className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-gold-hover transition-smooth hover:-translate-y-2 flex flex-col h-full">
+      <div className="relative h-[450px] overflow-hidden flex-shrink-0">
         <img 
           src={image} 
           alt={name}
@@ -29,8 +29,8 @@ const ProductCard = ({ image, name, whatsappMessage }: ProductCardProps) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
       </div>
       
-      <div className="p-6 text-center">
-        <h3 className="text-2xl font-semibold mb-4 text-foreground group-hover:text-primary transition-smooth">
+      <div className="p-6 text-center flex-grow flex flex-col justify-between">
+        <h3 className="text-2xl font-semibold mb-4 text-foreground group-hover:text-primary transition-smooth min-h-[4rem] flex items-center justify-center">
           {name}
         </h3>
         

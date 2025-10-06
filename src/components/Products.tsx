@@ -58,14 +58,14 @@ const Products = () => {
         
         <div 
           ref={ref}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 transition-all duration-1000 ${
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 items-stretch transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           {products.map((product, index) => (
             <div 
               key={product.id} 
-              className="animate-fade-in"
+              className="animate-fade-in flex"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <ProductCard {...product} />
