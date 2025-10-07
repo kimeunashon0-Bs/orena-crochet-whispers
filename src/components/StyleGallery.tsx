@@ -7,6 +7,7 @@ import p6 from "@/assets/p6.jpg";
 import p7 from "@/assets/p7.jpg";
 import p10 from "@/assets/p10.jpg";
 import p11 from "@/assets/p11.jpg";
+import c42 from "@/assets/c4-2.jpg";
 
 interface GalleryItem {
   id: number;
@@ -64,6 +65,12 @@ const galleryItems: GalleryItem[] = [
     clientName: "Feathered Fantasy",
     description: "Show-stopping orange dress with feather details - glamour meets handcrafted artistry"
   },
+  {
+    id: 9,
+    image: c42,
+    clientName: "Beaded Beauty",
+    description: "Elegant black beaded crop top with vibrant orange pants - sophistication meets bold style"
+  },
 ];
 
 const StyleGallery = () => {
@@ -99,7 +106,7 @@ const StyleGallery = () => {
                   <img
                     src={item.image}
                     alt={item.clientName}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                    className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
