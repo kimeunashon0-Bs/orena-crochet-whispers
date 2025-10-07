@@ -4,7 +4,7 @@ import { useState } from "react";
 const FloatingWhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
   const whatsappNumber = "254743173310";
-  const defaultMessage = "Hi Miss_Mwangangi,,,, I'd like to know more about your crochet products!";
+  const defaultMessage = "Hi! 👋 I'm interested in your beautiful handcrafted crochet pieces!";
   
   const handleWhatsAppClick = () => {
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
@@ -34,22 +34,32 @@ const FloatingWhatsApp = () => {
             <X className="w-4 h-4" />
           </button>
           
-          <div className="flex items-start gap-3 mb-3">
-            <div className="bg-[hsl(var(--whatsapp-green))] p-2 rounded-full">
+          <div className="flex items-start gap-3 mb-4">
+            <div className="bg-[hsl(var(--whatsapp-green))] p-2 rounded-full flex-shrink-0 animate-pulse">
               <MessageCircle className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground">Chat with us!</h3>
-              <p className="text-sm text-muted-foreground">We typically reply within minutes</p>
+              <h3 className="font-bold text-foreground text-lg mb-1">💬 Let's Create Together!</h3>
+              <p className="text-sm text-muted-foreground mb-2">
+                Have a custom design in mind? Want to know more about our pieces?
+              </p>
+              <p className="text-xs text-primary font-semibold">
+                ⚡ We respond within minutes!
+              </p>
             </div>
           </div>
           
           <button
             onClick={handleWhatsAppClick}
-            className="w-full bg-[hsl(var(--whatsapp-green))] text-white py-2 px-4 rounded-lg font-medium hover:opacity-90 transition-smooth"
+            className="w-full bg-gradient-to-br from-[hsl(var(--whatsapp-green))] to-[hsl(var(--whatsapp-green))] text-white py-3 px-4 rounded-lg font-bold hover:scale-105 transition-smooth shadow-lg hover:shadow-gold-hover flex items-center justify-center gap-2"
           >
-            Start Conversation
+            <MessageCircle className="w-5 h-5" />
+            Chat Now on WhatsApp
           </button>
+          
+          <p className="text-xs text-center text-muted-foreground mt-2">
+            Join 100+ happy customers! ⭐
+          </p>
         </div>
       )}
     </>

@@ -1,4 +1,6 @@
-import { MessageCircle, Instagram, Twitter, Facebook } from "lucide-react";
+import { MessageCircle, Instagram } from "lucide-react";
+import { SiTiktok } from "react-icons/si";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -40,7 +42,7 @@ const Footer = () => {
             className="text-white hover:text-primary transition-colors"
             aria-label="X (Twitter)"
           >
-            <Twitter className="w-6 h-6" />
+            <FaXTwitter className="w-6 h-6" />
           </a>
           <a 
             href="https://www.tiktok.com/@miss__mwangangi" 
@@ -49,7 +51,7 @@ const Footer = () => {
             className="text-white hover:text-primary transition-colors"
             aria-label="TikTok"
           >
-            <Facebook className="w-6 h-6" />
+            <SiTiktok className="w-6 h-6" />
           </a>
         </div>
         

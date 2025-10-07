@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Menu, X, Instagram, Twitter, Facebook } from "lucide-react";
+import { Menu, X as CloseIcon, Instagram } from "lucide-react";
+import { SiTiktok } from "react-icons/si";
+import { FaXTwitter } from "react-icons/fa6";
 import {
   Collapsible,
   CollapsibleContent,
@@ -66,7 +68,7 @@ const Navbar = () => {
                 className="text-foreground hover:text-primary transition-colors"
                 aria-label="X (Twitter)"
               >
-                <Twitter className="w-5 h-5" />
+                <FaXTwitter className="w-5 h-5" />
               </a>
               <a 
                 href="https://www.tiktok.com/@miss__mwangangi" 
@@ -75,7 +77,7 @@ const Navbar = () => {
                 className="text-foreground hover:text-primary transition-colors"
                 aria-label="TikTok"
               >
-                <Facebook className="w-5 h-5" />
+                <SiTiktok className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -87,7 +89,7 @@ const Navbar = () => {
                 className="text-foreground hover:text-primary transition-colors"
                 aria-label="Toggle menu"
               >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {isOpen ? <CloseIcon className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </CollapsibleTrigger>
             
@@ -129,7 +131,7 @@ const Navbar = () => {
                       className="text-foreground hover:text-primary transition-colors"
                       aria-label="X (Twitter)"
                     >
-                      <Twitter className="w-6 h-6" />
+                      <FaXTwitter className="w-6 h-6" />
                     </a>
                     <a 
                       href="https://www.tiktok.com/@miss__mwangangi" 
@@ -138,7 +140,7 @@ const Navbar = () => {
                       className="text-foreground hover:text-primary transition-colors"
                       aria-label="TikTok"
                     >
-                      <Facebook className="w-6 h-6" />
+                      <SiTiktok className="w-6 h-6" />
                     </a>
                   </div>
                 </div>
