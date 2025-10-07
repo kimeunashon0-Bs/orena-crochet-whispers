@@ -5,12 +5,14 @@ import heroSection from "@/assets/hero-section.jpg";
 import heroCrochet from "@/assets/hero-crochet.jpg";
 import c1 from "@/assets/c1.jpg";
 import c2 from "@/assets/c2.jpg";
+import c4 from "@/assets/c4.jpg";
 
 const heroImages = [
   heroSection,
   heroCrochet,
   c1,
   c2,
+  c4,
 ];
 
 const Hero = () => {
