@@ -1,4 +1,12 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import p1 from "@/assets/p1.jpg";
+import p2 from "@/assets/p2.jpg";
+import p4 from "@/assets/p4.jpg";
+import p5 from "@/assets/p5.jpg";
+import p6 from "@/assets/p6.jpg";
+import p7 from "@/assets/p7.jpg";
+import p10 from "@/assets/p10.jpg";
+import p11 from "@/assets/p11.jpg";
 
 interface GalleryItem {
   id: number;
@@ -8,12 +16,53 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
-  // Placeholder items - will be updated with actual client photos
   {
     id: 1,
-    image: "",
-    clientName: "Client Showcase",
-    description: "Rocking our handcrafted crochet pieces with style and confidence"
+    image: p1,
+    clientName: "Back Lace-Up Elegance",
+    description: "Stunning beaded crop tops with beautiful back lace-up details, paired with sleek palazzo pants"
+  },
+  {
+    id: 2,
+    image: p2,
+    clientName: "Beach Vibes",
+    description: "Gorgeous green crochet bikini top perfect for tropical adventures and poolside confidence"
+  },
+  {
+    id: 3,
+    image: p4,
+    clientName: "Rainbow Radiance",
+    description: "Eye-catching multicolor striped halter top that brings joy and vibrant energy"
+  },
+  {
+    id: 4,
+    image: p5,
+    clientName: "Squad Goals",
+    description: "Our beautiful clients showcasing a stunning collection of colorful crochet swimwear and beachwear"
+  },
+  {
+    id: 5,
+    image: p6,
+    clientName: "Group Glam",
+    description: "Five gorgeous styles from pink fringe to yellow elegance - every piece tells a story"
+  },
+  {
+    id: 6,
+    image: p7,
+    clientName: "Yellow Dream",
+    description: "Elegant yellow crochet dress that flows beautifully, perfect for any special occasion"
+  },
+  {
+    id: 7,
+    image: p10,
+    clientName: "Orange Sunset",
+    description: "Bold orange crochet bikini set that radiates confidence and summer vibes"
+  },
+  {
+    id: 8,
+    image: p11,
+    clientName: "Feathered Fantasy",
+    description: "Show-stopping orange dress with feather details - glamour meets handcrafted artistry"
   },
 ];
 
