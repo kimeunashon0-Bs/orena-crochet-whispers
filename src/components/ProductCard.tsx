@@ -39,7 +39,7 @@ const ProductCard = ({ image, name, whatsappMessage }: ProductCardProps) => {
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleEnquire}
-          className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-br from-primary to-primary-dark text-primary-foreground rounded-full font-semibold transition-smooth hover:scale-105 hover:shadow-gold-hover active:scale-95"
+          className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-br from-primary to-primary-dark text-primary-foreground rounded-full font-semibold transition-smooth hover:scale-105 hover:shadow-gold-hover active:scale-95"
         >
           <MessageCircle className="w-5 h-5 text-[hsl(var(--whatsapp-green))] group-hover:animate-pulse" />
           Enquire
