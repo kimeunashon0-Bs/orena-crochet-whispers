@@ -1,53 +1,50 @@
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import blueBikini from "@/assets/blue-bikini.jpg";
-import redPearlDress from "@/assets/red-pearl-dress.jpg";
-import orangeBikini from "@/assets/orange-bikini.jpg";
-import multicolorDress from "@/assets/multicolor-dress.jpg";
-import purpleTop from "@/assets/purple-top.jpg";
-import greyBeanie from "@/assets/grey-beanie.jpg";
+import { supabase } from "@/integrations/supabase/client";
 
-const products = [
-  {
-    id: 1,
-    image: blueBikini,
-    name: "Crochet Bikini Set - Blue",
-    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Crochet Bikini Set - Blue from Orena. Could you please share the price and availability?"
-  },
-  {
-    id: 2,
-    image: redPearlDress,
-    name: "Pearl Crochet Dress - Red",
-    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Pearl Crochet Dress - Red from Orena. Could you please share the price and availability?"
-  },
-  {
-    id: 3,
-    image: orangeBikini,
-    name: "Crochet Bikini Set - Orange",
-    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Crochet Bikini Set - Orange from Orena. Could you please share the price and availability?"
-  },
-  {
-    id: 4,
-    image: multicolorDress,
-    name: "Multicolor Crochet Dress",
-    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Multicolor Crochet Dress from Orena. Could you please share the price and availability?"
-  },
-  {
-    id: 5,
-    image: purpleTop,
-    name: "Ruffled Crochet Top - Purple",
-    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Ruffled Crochet Top - Purple from Orena. Could you please share the price and availability?"
-  },
-  {
-    id: 6,
-    image: greyBeanie,
-    name: "Crochet Beanie - Grey",
-    whatsappMessage: "Hi Miss_Mwangangi,,,, I'm interested in the Crochet Beanie - Grey from Orena. Could you please share the price and availability?"
-  }
-];
+interface Product {
+  id: string;
+  name: string;
+  image_url: string;
+  whatsapp_message: string;
+}
 
 const Products = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("products")
+        .select("*")
+        .eq("is_active", true)
+        .order("sort_order");
+
+      if (error) throw error;
+      setProducts(data || []);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <section className="py-20 px-4 md:px-8 lg:px-16" id="products">
+        <div className="max-w-7xl mx-auto text-center">
+          <p>Loading products...</p>
+        </div>
+      </section>
+    );
+  }
   
   return (
     <section className="py-20 px-4 md:px-8 lg:px-16" id="products">
@@ -68,7 +65,12 @@ const Products = () => {
               className="animate-fade-in flex"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <ProductCard {...product} />
+              <ProductCard
+                id={product.id}
+                image={product.image_url}
+                name={product.name}
+                whatsappMessage={product.whatsapp_message}
+              />
             </div>
           ))}
         </div>

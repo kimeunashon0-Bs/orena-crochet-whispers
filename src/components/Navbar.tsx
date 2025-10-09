@@ -1,7 +1,18 @@
 import { useState } from "react";
-import { Menu, X as CloseIcon, Instagram } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Menu, X as CloseIcon, Instagram, ShoppingCart, Heart, User, LogOut } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
+import { useAuth } from "@/contexts/AuthContext";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Collapsible,
   CollapsibleContent,
@@ -10,6 +21,8 @@ import {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, isAdmin, signOut } = useAuth();
+  const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -51,6 +64,8 @@ const Navbar = () => {
             >
               About
             </button>
+            
+            {/* Social Media Icons */}
             <div className="flex items-center gap-4 ml-4">
               <a 
                 href="https://www.instagram.com/miss__mwangangi" 
@@ -79,6 +94,58 @@ const Navbar = () => {
               >
                 <SiTiktok className="w-5 h-5" />
               </a>
+            </div>
+
+            {/* User Menu */}
+            <div className="flex items-center gap-4 ml-4">
+              <button
+                onClick={() => navigate("/cart")}
+                className="text-foreground hover:text-primary transition-colors relative"
+              >
+                <ShoppingCart className="w-6 h-6" />
+              </button>
+              <button
+                onClick={() => navigate("/favorites")}
+                className="text-foreground hover:text-primary transition-colors"
+              >
+                <Heart className="w-6 h-6" />
+              </button>
+              
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                      <User className="w-6 h-6" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    {isAdmin && (
+                      <DropdownMenuItem onClick={() => navigate("/admin")}>
+                        Admin Dashboard
+                      </DropdownMenuItem>
+                    )}
+                    <DropdownMenuItem onClick={() => navigate("/cart")}>
+                      <ShoppingCart className="w-4 h-4 mr-2" />
+                      Cart
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => navigate("/favorites")}>
+                      <Heart className="w-4 h-4 mr-2" />
+                      Favorites
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={signOut}>
+                      <LogOut className="w-4 h-4 mr-2" />
+                      Sign Out
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Button onClick={() => navigate("/auth")} variant="default">
+                  Sign In
+                </Button>
+              )}
             </div>
           </div>
 
@@ -114,6 +181,36 @@ const Navbar = () => {
                   >
                     About
                   </button>
+                  
+                  {/* Mobile User Actions */}
+                  <div className="flex flex-col gap-2 pt-4 border-t border-border">
+                    <Button onClick={() => navigate("/cart")} variant="outline" className="w-full justify-start">
+                      <ShoppingCart className="w-4 h-4 mr-2" />
+                      Cart
+                    </Button>
+                    <Button onClick={() => navigate("/favorites")} variant="outline" className="w-full justify-start">
+                      <Heart className="w-4 h-4 mr-2" />
+                      Favorites
+                    </Button>
+                    {user ? (
+                      <>
+                        {isAdmin && (
+                          <Button onClick={() => navigate("/admin")} variant="outline" className="w-full justify-start">
+                            Admin Dashboard
+                          </Button>
+                        )}
+                        <Button onClick={signOut} variant="outline" className="w-full justify-start">
+                          <LogOut className="w-4 h-4 mr-2" />
+                          Sign Out
+                        </Button>
+                      </>
+                    ) : (
+                      <Button onClick={() => navigate("/auth")} className="w-full">
+                        Sign In
+                      </Button>
+                    )}
+                  </div>
+
                   <div className="flex items-center gap-6 pt-4 border-t border-border">
                     <a 
                       href="https://www.instagram.com/miss__mwangangi" 

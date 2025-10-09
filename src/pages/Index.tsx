@@ -6,6 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import EmailCapturePopup from "@/components/EmailCapturePopup";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <About />
       <Footer />
       <FloatingWhatsApp />
+      <EmailCapturePopup />
     </div>
   );
 };
