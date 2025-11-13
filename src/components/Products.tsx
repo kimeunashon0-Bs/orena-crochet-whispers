@@ -3,6 +3,23 @@ import ProductCard from "./ProductCard";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { supabase } from "@/integrations/supabase/client";
 
+// Import images
+import blueBikini from "@/assets/blue-bikini.jpg";
+import redPearlDress from "@/assets/red-pearl-dress.jpg";
+import orangeBikini from "@/assets/orange-bikini.jpg";
+import multicolorDress from "@/assets/multicolor-dress.jpg";
+import purpleTop from "@/assets/purple-top.jpg";
+import greyBeanie from "@/assets/grey-beanie.jpg";
+
+const imageMap: Record<string, string> = {
+  "blue-bikini.jpg": blueBikini,
+  "red-pearl-dress.jpg": redPearlDress,
+  "orange-bikini.jpg": orangeBikini,
+  "multicolor-dress.jpg": multicolorDress,
+  "purple-top.jpg": purpleTop,
+  "grey-beanie.jpg": greyBeanie,
+};
+
 interface Product {
   id: string;
   name: string;
@@ -67,7 +84,7 @@ const Products = () => {
             >
               <ProductCard
                 id={product.id}
-                image={product.image_url}
+                image={imageMap[product.image_url] || product.image_url}
                 name={product.name}
                 whatsappMessage={product.whatsapp_message}
               />
